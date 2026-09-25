@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXSH TRF System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <h2>LUXSH <span class="text-small">TECH</span></h2>
+            </div>
+            
+            <div class="user-profile">
+                <div class="avatar">SK</div>
+                <div class="user-info">
+                    <div class="user-name">Santosh Khairnar</div>
+                    <div class="user-role">ADL Manager</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <span class="icon">📄</span> Requested 
+                        <span class="badge unread" id="count-requested">3</span>
+                    </li>
+                    <li>
+                        <span class="icon">✅</span> Accepted 
+                        <span class="badge" id="count-accepted">0</span>
+                    </li>
+                    <li>
+                        <span class="icon">📋</span> Allocated 
+                        <span class="badge unread" id="count-allocated">5</span>
+                    </li>
+                    <li>
+                        <span class="icon">🧪</span> Scientist Submitted
+                    </li>
+                    <li>
+                        <span class="icon">🧑‍💼</span> Manager Submitted
+                    </li>
+                    <li>
+                        <span class="icon">🚀</span> Released
+                    </li>
+                    <li>
+                        <span class="icon">❌</span> Rejected
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer-credit">Powered by Luxsh Technologies © 2026</div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <button class="menu-toggle">☰</button>
+            </header>
+
+            <div class="content-wrapper">
+                <div id="table-view">
+                    <div class="search-section">
+                        <div class="search-header">
+                            <h3>Search TRF</h3>
+                            <div class="search-actions">
+                                <button class="btn-primary search-btn" onclick="applyTopSearch()">🔍 Search</button>
+                                <button class="btn-secondary clear-btn" onclick="clearAllFilters()">✖ Clear</button>
+                            </div>
+                        </div>
+                        <div class="search-filters compact">
+                            <div class="filter-group">
+                                <label>Start Date</label>
+                                <input type="date" id="top-search-start" class="date-input">
+                            </div>
+                            <div class="filter-group">
+                                <label>End Date</label>
+                                <input type="date" id="top-search-end" class="date-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-section">
+                        <div class="table-header">
+                            <h3 id="table-title">Accepted TRF</h3>
+                            <div class="table-actions">
+                                <input type="text" placeholder="🔍 Search" class="global-search">
+                                <button class="btn-outline">PDF</button>
+                                <button class="btn-outline">Excel</button>
+                                <button class="btn-outline">CSV</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>TRF Number <span>↓↑</span></th>
+                                        <th>FND Approver Name <span>↓↑</span></th>
+                                        <th>Project Code/ Name <span>↓↑</span></th>
+                                        <th>Batch Number <span>↓↑</span></th>
+                                        <th>Status <span>↓↑</span></th>
+                                        <th>Storage Condition <span>↓↑</span></th>
+                                        <th>Approved Date <span>↓↑</span></th>
+                                        <th>Request Date <span>↓↑</span></th>
+                                        <th>Action <span>↓↑</span></th>
+                                    </tr>
+
+                                </thead>
+                                <tbody id="table-body">
+                                    <tr class="data-row">
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000055')">TRF000055</a></td>
+                                        <td>Gaurav Mistry</td>
+                                        <td>ACI / Aciclovir oral suspension</td>
+                                        <td>TEST/PRE/TAB/75-DT/001</td>
+                                        <td>Initial</td>
+                                        <td>40°C/75% RH</td>
+                                        <td>22-09-2026</td>
+                                        <td>02-06-2026</td>
+                                        <td class="action-cell">
+                                            <button class="action-btn accept-btn" onclick="handleAction('TRF000055', 'Accepted')">✓</button>
+                                            <button class="action-btn reject-btn" onclick="handleAction('TRF000055', 'Rejected')">✖</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="data-row">
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000062')">TRF000062</a></td>
+                                        <td>Gaurav Mistry</td>
+                                        <td>RIV / Rivaroxaban 20mg/5ml Oral Solution/Suspension</td>
+                                        <td>TEST/PRE/TAB/75-DT/001</td>
+                                        <td>Stability 6M</td>
+                                        <td>25°C/60% RH</td>
+                                        <td>22-09-2026</td>
+                                        <td>02-06-2026</td>
+                                        <td class="action-cell">
+                                            <button class="action-btn accept-btn" onclick="handleAction('TRF000062', 'Accepted')">✓</button>
+                                            <button class="action-btn reject-btn" onclick="handleAction('TRF000062', 'Rejected')">✖</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="data-row">
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000061')">TRF000061</a></td>
+                                        <td>Gaurav Mistry</td>
+                                        <td>LAN / Lansoprazole 15mg, 30mg GR granule for suspn</td>
+                                        <td>TEST/PRE/TAB/75-DT/001</td>
+                                        <td>Stability 6M</td>
+                                        <td>25°C/60% RH</td>
+                                        <td>22-09-2026</td>
+                                        <td>02-06-2026</td>
+                                        <td class="action-cell">
+                                            <button class="action-btn accept-btn" onclick="handleAction('TRF000061', 'Accepted')">✓</button>
+                                            <button class="action-btn reject-btn" onclick="handleAction('TRF000061', 'Rejected')">✖</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="pagination-footer">
+                            <div class="entries-select">
+                                Show <select id="entries-per-page"><option>10</option><option>25</option></select> entries
+                            </div>
+                            <div class="pagination-controls">
+                                <button class="page-btn">‹</button>
+                                <button class="page-btn active">1</button>
+                                <button class="page-btn">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="form-view" style="display: none;">
+                    <div class="form-header">
+                        <button class="btn-secondary back-btn" onclick="showTableView()">← Back to List</button>
+                        <h3 style="margin-top: 15px;" id="form-title">Requested TRF</h3>
+                    </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>TRF No.</label>
+                        <input type="text" value="TRF000055" readonly>
+                    </div>
+                    <!-- AR No removed as per requirements -->
+                    <div class="form-group">
+                        <label>Project Code / Name*</label>
+                        <input type="text" value="ACI | Aciclovir oral suspension" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Sample Quantity</label>
+                        <input type="text" value="1g" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Expiry Date</label>
+                        <input type="text" value="20-05-2026" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <input type="text" value="Initial" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Pack Details</label>
+                        <input type="text" value="ALU-ALU Blister Pack - 10's Tablets per Blister" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Storage Condition</label>
+                        <input type="text" value="40°C/75% RH" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Batch/Lot No</label>
+                        <input type="text" value="TEST/PRE/TAR/75-DT/001" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Label Claim</label>
+                        <input type="text" value="Each uncoated tablet Contains, Clonidine hydrochloride..............100 mcg" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Info</label>
+                        <input type="text" value="asdfas" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Mfg By</label>
+                        <input type="text" value="Gowrie Research" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Qty per Station for Chemical Test</label>
+                        <input type="text" value="60 Tablets" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mfg Date</label>
+                        <input type="text" value="20-05-2026" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Sample Stage</label>
+                        <input type="text" value="Finished Product" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>FND Approved By</label>
+                        <input type="text" value="Gaurav Mistry" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Accepted By ADL</label>
+                        <input type="text" value="Santosh Khairnar" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Assigned Scientist name</label>
+                        <input type="text" value="John Doe" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Batch Size</label>
+                        <input type="text" value="500 Tablets" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>TRF Status</label>
+                        <input type="text" value="Requested" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Approved Date</label>
+                        <input type="text" value="22-09-2026" readonly>
+                    </div>
+                </div>
+
+                <div class="stability-section">
+                    <h4>B. Stability condition</h4>
+                    <div class="table-responsive">
+                        <table class="stability-table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Stability (Storage) Conditions</th>
+                                    <th colspan="10">Stability Stations</th>
+                                </tr>
+                                <tr>
+                                    <th>1M</th><th>2M</th><th>3M</th><th>6M</th><th>9M</th><th>12M</th><th>15M</th><th>18M</th><th>24M</th><th>36M</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Accelerated<br>(40°C ± 2°C / 75% ± 5% RH)</td>
+                                    <td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Long term (25°C ± 2°C/60% ± 5% RH) (zone I & II)</td>
+                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Intermediate (30 °C ± 2 °C/ 65% ± 5% RH) (zone I & II)</td>
+                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Refrigeration (5 °C ± 3 °C)</td>
+                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                </tr>
+                                <tr>
+                                    <td>Freezing (- 20°C ± 5°C)</td>
+                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Results Section (Visibility Controlled by Role) -->
+                <div class="results-section" id="results-section">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Test Name</th>
+                                <th>Remark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Other</td>
+                                <td>wswswsw</td>
+                            </tr>
+                            <tr>
+                                <td>Assay 2</td>
+                                <td>sadADASD</td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td>SDASDSDCS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-footer">
+                        Showing 1 to 3 of 3 entries
+                    </div>
+                </div>
+                
+                <div id="team-leader-message" class="hidden-message" style="display:none;">
+                    Results are hidden. Only Creator and Managers can view released results.
+                </div>
+                </div> <!-- End form-view -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Email triggered to rashmi.parmar@luxshtech.com</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
