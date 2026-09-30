@@ -142,3 +142,58 @@ function handleAction(trfNumber, action) {
         toast.style.backgroundColor = '#00b09b';
     }, 3000);
 }
+
+function toggleStabilitySection() {
+    const statusSelect = document.getElementById('status-select');
+    const stabilitySection = document.getElementById('stability-section');
+    if (statusSelect && stabilitySection) {
+        if (statusSelect.value === 'Stability') {
+            stabilitySection.style.display = 'block';
+        } else {
+            stabilitySection.style.display = 'none';
+        }
+    }
+}
+
+function toggleEditRemark(button, inputId) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+
+    const editIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>`;
+    const saveIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>`;
+
+    if (input.hasAttribute('readonly')) {
+        // Switch to edit mode
+        input.removeAttribute('readonly');
+        input.classList.remove('read-only-input');
+        input.style.backgroundColor = '#fff';
+        input.style.border = '1px solid #007bff';
+        input.style.boxShadow = '0 0 0 2px rgba(0,123,255,.25)';
+        input.focus();
+        
+        button.innerHTML = saveIcon;
+        button.title = 'Save Remark';
+    } else {
+        // Switch to save mode
+        input.setAttribute('readonly', 'true');
+        input.classList.add('read-only-input');
+        input.style.backgroundColor = '';
+        input.style.border = '';
+        input.style.boxShadow = '';
+        
+        button.innerHTML = editIcon;
+        button.title = 'Edit Remark';
+        
+        // Optional: show a small toast notification that it saved
+        const toast = document.getElementById('toast');
+        if (toast) {
+            toast.textContent = 'Remark updated successfully.';
+            toast.style.backgroundColor = '#00b09b';
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+    }
+}
+
+
+

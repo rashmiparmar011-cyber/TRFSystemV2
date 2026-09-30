@@ -102,55 +102,55 @@
                                         <th>Project Code/ Name <span>↓↑</span></th>
                                         <th>Batch Number <span>↓↑</span></th>
                                         <th>Status <span>↓↑</span></th>
-                                        <th>Storage Condition <span>↓↑</span></th>
-                                        <th>Approved Date <span>↓↑</span></th>
                                         <th>Request Date <span>↓↑</span></th>
-                                        <th>Action <span>↓↑</span></th>
+                                        <th>Test Assigned/Total Test <span>↓↑</span></th>
                                     </tr>
-
                                 </thead>
                                 <tbody id="table-body">
                                     <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000055')">TRF000055</a></td>
-                                        <td>Gaurav Mistry</td>
-                                        <td>ACI / Aciclovir oral suspension</td>
-                                        <td>TEST/PRE/TAB/75-DT/001</td>
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000149')">TRF000149</a></td>
+                                        <td>NEHA MANAGER</td>
+                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
+                                        <td>Abc</td>
                                         <td>Initial</td>
-                                        <td>40°C/75% RH</td>
-                                        <td>22-09-2026</td>
-                                        <td>02-06-2026</td>
-                                        <td class="action-cell">
-                                            <button class="action-btn accept-btn" onclick="handleAction('TRF000055', 'Accepted')">✓</button>
-                                            <button class="action-btn reject-btn" onclick="handleAction('TRF000055', 'Rejected')">✖</button>
-                                        </td>
+                                        <td>08-06-2026</td>
+                                        <td>3/3</td>
                                     </tr>
                                     <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000062')">TRF000062</a></td>
-                                        <td>Gaurav Mistry</td>
-                                        <td>RIV / Rivaroxaban 20mg/5ml Oral Solution/Suspension</td>
-                                        <td>TEST/PRE/TAB/75-DT/001</td>
-                                        <td>Stability 6M</td>
-                                        <td>25°C/60% RH</td>
-                                        <td>22-09-2026</td>
-                                        <td>02-06-2026</td>
-                                        <td class="action-cell">
-                                            <button class="action-btn accept-btn" onclick="handleAction('TRF000062', 'Accepted')">✓</button>
-                                            <button class="action-btn reject-btn" onclick="handleAction('TRF000062', 'Rejected')">✖</button>
-                                        </td>
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000138')">TRF000138</a></td>
+                                        <td>NEHA MANAGER</td>
+                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
+                                        <td>Abc</td>
+                                        <td>Stability</td>
+                                        <td>08-06-2026</td>
+                                        <td>3/3</td>
                                     </tr>
                                     <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000061')">TRF000061</a></td>
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000136')">TRF000136</a></td>
+                                        <td>NEHA MANAGER</td>
+                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
+                                        <td>Abc</td>
+                                        <td>Initial</td>
+                                        <td>08-06-2026</td>
+                                        <td>3/3</td>
+                                    </tr>
+                                    <tr class="data-row">
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000135')">TRF000135</a></td>
+                                        <td>NEHA MANAGER</td>
+                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
+                                        <td>Abc</td>
+                                        <td>Stability</td>
+                                        <td>08-06-2026</td>
+                                        <td>3/3</td>
+                                    </tr>
+                                    <tr class="data-row">
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000132')">TRF000132</a></td>
                                         <td>Gaurav Mistry</td>
-                                        <td>LAN / Lansoprazole 15mg, 30mg GR granule for suspn</td>
-                                        <td>TEST/PRE/TAB/75-DT/001</td>
-                                        <td>Stability 6M</td>
-                                        <td>25°C/60% RH</td>
-                                        <td>22-09-2026</td>
-                                        <td>02-06-2026</td>
-                                        <td class="action-cell">
-                                            <button class="action-btn accept-btn" onclick="handleAction('TRF000061', 'Accepted')">✓</button>
-                                            <button class="action-btn reject-btn" onclick="handleAction('TRF000061', 'Rejected')">✖</button>
-                                        </td>
+                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
+                                        <td>Abc</td>
+                                        <td>Initial</td>
+                                        <td>05-06-2026</td>
+                                        <td>3/3</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -171,106 +171,97 @@
 
                 <div id="form-view" style="display: none;">
                     <div class="form-header">
-                        <button class="btn-secondary back-btn" onclick="showTableView()">← Back to List</button>
-                        <h3 style="margin-top: 15px;" id="form-title">Requested TRF</h3>
+                        <h3 style="margin-top: 15px;" id="form-title">Allocated View TRF</h3>
                     </div>
 
                 <div class="form-grid">
                     <div class="form-group">
                         <label>TRF No.</label>
-                        <input type="text" value="TRF000055">
+                        <input type="text" value="TRF000149" readonly class="read-only-input">
                     </div>
-                    <!-- AR No removed as per requirements -->
+
                     <div class="form-group">
                         <label>Project Code / Name*</label>
-                        <input type="text" value="ACI | Aciclovir oral suspension">
+                        <input type="text" value="NTR | Nitrofurantoin 100mg Prolonged Release Cap" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>Sample Quantity</label>
-                        <input type="text" value="1g">
+                        <input type="text" value="25" readonly class="read-only-input">
                     </div>
 
                     <div class="form-group">
                         <label>Expiry Date</label>
-                        <input type="text" value="20-05-2026">
+                        <input type="text" value="25-09-2026" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>Status</label>
-                        <input type="text" value="Initial">
+                        <select id="status-select" onchange="toggleStabilitySection()" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
+                            <option value="Initial">Initial</option>
+                            <option value="Stability" selected>Stability</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>Pack Details</label>
-                        <input type="text" value="ALU-ALU Blister Pack - 10's Tablets per Blister">
+                        <label>Pack</label>
+                        <input type="text" value="10" readonly class="read-only-input">
                     </div>
-                    <div class="form-group">
-                        <label>Storage Condition</label>
-                        <input type="text" value="40°C/75% RH">
-                    </div>
+
 
                     <div class="form-group">
                         <label>Batch/Lot No</label>
-                        <input type="text" value="TEST/PRE/TAR/75-DT/001">
+                        <input type="text" value="Abc" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>Label Claim</label>
-                        <input type="text" value="Each uncoated tablet Contains, Clonidine hydrochloride..............100 mcg">
+                        <input type="text" value="Abc" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>Additional Info</label>
-                        <input type="text" value="asdfas">
+                        <input type="text" value="Abc" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
-                        <label>Mfg By</label>
-                        <input type="text" value="Gowrie Research">
-                    </div>
-                    <div class="form-group">
-                        <label>Qty per Station for Chemical Test</label>
-                        <input type="text" value="60 Tablets">
+                        <label>Mfg By.</label>
+                        <input type="text" value="Robin" readonly class="read-only-input">
                     </div>
 
                     <div class="form-group">
                         <label>Mfg Date</label>
-                        <input type="text" value="20-05-2026">
+                        <input type="text" value="05-06-2026" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>Sample Stage</label>
-                        <input type="text" value="Finished Product">
+                        <input type="text" value="Finished Product" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>FND Approved By</label>
-                        <input type="text" value="Gaurav Mistry">
+                        <input type="text" value="NEHA MANAGER" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>Accepted By ADL</label>
-                        <input type="text" value="Santosh Khairnar">
+                        <input type="text" value="Santosh Khairnar" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
-                        <label>Assigned Scientist name</label>
-                        <input type="text" value="John Doe">
+                        <label>ADL Scientist Name</label>
+                        <input type="text" value="Hardik Patel" readonly class="read-only-input">
                     </div>
 
                     <div class="form-group">
                         <label>Batch Size</label>
-                        <input type="text" value="500 Tablets">
+                        <input type="text" value="10" readonly class="read-only-input">
                     </div>
                     <div class="form-group">
                         <label>TRF Status</label>
-                        <input type="text" value="Requested">
-                    </div>
-                    <div class="form-group">
-                        <label>Approved Date</label>
-                        <input type="text" value="22-09-2026">
+                        <input type="text" value="Allocated" readonly class="read-only-input">
                     </div>
                 </div>
 
-                <div class="stability-section">
-                    <h4>B. Stability condition</h4>
+                <div class="stability-section" id="stability-section" style="margin-top: 20px; margin-bottom: 20px;">
+                    <h4>B. Stability condition: (Put on √ mark)</h4>
                     <div class="table-responsive">
-                        <table class="stability-table">
+                        <table class="stability-table data-table">
                             <thead>
                                 <tr>
                                     <th rowspan="2">Stability (Storage) Conditions</th>
-                                    <th colspan="10">Stability Stations</th>
+                                    <th colspan="10" style="text-align: center;">Stability Stations</th>
                                 </tr>
                                 <tr>
                                     <th>1M</th><th>2M</th><th>3M</th><th>6M</th><th>9M</th><th>12M</th><th>15M</th><th>18M</th><th>24M</th><th>36M</th>
@@ -309,20 +300,44 @@
                             <tr>
                                 <th>Test Name</th>
                                 <th>Remark</th>
+                                <th>Assigned To</th>
+                                <th>Test Result</th>
+                                <th>Submitted By</th>
+                                <th>Submitted On</th>
+                                <th>Test Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Other</td>
-                                <td>wswswsw</td>
+                                <td><input type="text" value="Dissolution-1" class="read-only-input" readonly></td>
+                                <td><input type="text" id="remark-1" value="qq" class="read-only-input" readonly></td>
+                                <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
+                                <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;">Upload</button></td>
+                                <td><input type="text" value="" class="read-only-input" readonly></td>
+                                <td><input type="text" value="" class="read-only-input" readonly></td>
+                                <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
+                                <td style="text-align: center;"><button style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;" onclick="toggleEditRemark(this, 'remark-1')" title="Edit Remark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button></td>
                             </tr>
                             <tr>
-                                <td>Assay 2</td>
-                                <td>sadADASD</td>
+                                <td><input type="text" value="Assay-3" class="read-only-input" readonly></td>
+                                <td><input type="text" id="remark-2" value="aa" class="read-only-input" readonly></td>
+                                <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
+                                <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;">Upload</button></td>
+                                <td><input type="text" value="" class="read-only-input" readonly></td>
+                                <td><input type="text" value="" class="read-only-input" readonly></td>
+                                <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
+                                <td style="text-align: center;"><button style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;" onclick="toggleEditRemark(this, 'remark-2')" title="Edit Remark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button></td>
                             </tr>
                             <tr>
-                                <td>Description</td>
-                                <td>SDASDSDCS</td>
+                                <td><input type="text" value="Related Substance" class="read-only-input" readonly></td>
+                                <td><input type="text" id="remark-3" value="23" class="read-only-input" readonly></td>
+                                <td><input type="text" value="Mangesh Lohate" class="read-only-input" readonly></td>
+                                <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;">Upload</button></td>
+                                <td><input type="text" value="" class="read-only-input" readonly></td>
+                                <td><input type="text" value="" class="read-only-input" readonly></td>
+                                <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
+                                <td style="text-align: center;"><button style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;" onclick="toggleEditRemark(this, 'remark-3')" title="Edit Remark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button></td>
                             </tr>
                         </tbody>
                     </table>
