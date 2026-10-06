@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,64 +8,148 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="logo-container">
-                <h2>LUXSH <span class="text-small">TECH</span></h2>
-            </div>
-            
-            <div class="user-profile">
-                <div class="avatar">SK</div>
-                <div class="user-info">
-                    <div class="user-name">Santosh Khairnar</div>
-                    <div class="user-role">ADL Manager</div>
+            <div class="sidebar-header"
+                style="background-image: url('C:/Users/parmaras/.gemini/antigravity-ide/brain/ce172050-4771-4fe4-b66e-b23a1c224294/sidebar_starry_bg_1790947453900.jpg'); background-size: cover; background-position: center;">
+                <div class="logo-container">
+                    <h2 style="display: flex; align-items: center; gap: 10px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#logoGrad)"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <defs>
+                                <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#fff" />
+                                    <stop offset="100%" stop-color="#ccc" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                            <path d="M2 12h20"></path>
+                        </svg>
+                        LUXSH <span class="text-small">TECH</span>
+                    </h2>
+                </div>
+
+                <div class="user-profile">
+                    <div class="avatar"
+                        style="background: url('https://i.pravatar.cc/150?u=a042581f4e29026704d') center/cover;"></div>
+                    <div class="user-info">
+                        <div class="user-name">Santosh Khairnar</div>
+                        <div class="user-role">ADL Manager</div>
+                    </div>
                 </div>
             </div>
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li class="active">
-                        <span class="icon">📄</span> Requested 
-                        <span class="badge unread" id="count-requested">3</span>
+                    <li onclick="showDashboardView()">
+                        Dashboard
                     </li>
-                    <li>
-                        <span class="icon">✅</span> Accepted 
-                        <span class="badge" id="count-accepted">0</span>
+                    <li onclick="showTableView()">
+                        TRF
                     </li>
-                    <li>
-                        <span class="icon">📋</span> Allocated 
-                        <span class="badge unread" id="count-allocated">5</span>
+                    <li onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="12" x2="12" y2="16"></line><line x1="12" y1="20" x2="12.01" y2="20"></line></svg></span> Requested <span class="badge unread" id="count-requested">3</span>
                     </li>
-                    <li>
-                        <span class="icon">🧪</span> Scientist Submitted
+                    <li onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m9 12 2 2 4-4"></path></svg></span> Accepted <span class="badge" id="count-accepted">0</span>
                     </li>
-                    <li>
-                        <span class="icon">🧑‍💼</span> Manager Submitted
+                    <li onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="12" x2="15" y2="12"></line><line x1="9" y1="16" x2="15" y2="16"></line><line x1="7" y1="12" x2="7.01" y2="12"></line><line x1="7" y1="16" x2="7.01" y2="16"></line></svg></span> Allocated <span class="badge unread" id="count-allocated">5</span>
                     </li>
-                    <li>
-                        <span class="icon">👥</span> ADL Team leader
+                    <li onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path></svg></span> Scientist Submitted
                     </li>
-                    <li>
-                        <span class="icon">🚀</span> Released
+                    <li onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M12 11v6"></path><path d="M9 14h6"></path></svg></span> Team Leader Submitted
                     </li>
-                    <li>
-                        <span class="icon">❌</span> Rejected
+                    <li class="active" onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M17 18v-4"></path><path d="M14 18v-2"></path><path d="M20 18v-6"></path></svg></span> Manager Submitted
+                        <span class="dot-indicator"></span>
+                    </li>
+                    <li onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></span> Released
+                    </li>
+                    <li onclick="showTableView()">
+                        <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></span> Rejected
                     </li>
                 </ul>
             </nav>
-            <div class="footer-credit">Powered by Luxsh Technologies © 2026</div>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
-            <header class="top-header">
+        <main class="main-content" style="position: relative;">
+            <header class="top-header" style="display: flex; justify-content: space-between; align-items: center;">
                 <button class="menu-toggle">☰</button>
+                <div class="header-avatar"
+                    style="width: 32px; height: 32px; border-radius: 50%; background: url('https://i.pravatar.cc/150?u=a042581f4e29026704d') center/cover;">
+                </div>
             </header>
 
             <div class="content-wrapper">
+                <div id="dashboard-view" style="display: none;">
+                    <div class="dashboard-header">
+                        <h3>Main Dashboard</h3>
+                        <div class="dashboard-dots">
+                            <span class="dot cyan"></span>
+                            <span class="dot yellow"></span>
+                        </div>
+                    </div>
+                    <div class="dashboard-cards">
+                        <div class="dash-card" style="background-color: #9b7bc2;">
+                            <div class="dash-card-content">
+                                <div class="dash-card-info">
+                                    <div class="dash-card-title">Total Projects</div>
+                                    <div class="dash-card-link">View Details</div>
+                                </div>
+                                <div class="dash-card-value">22</div>
+                            </div>
+                        </div>
+                        <div class="dash-card" style="background-color: #1cc2b2;">
+                            <div class="dash-card-content">
+                                <div class="dash-card-info">
+                                    <div class="dash-card-title">Created TRF</div>
+                                    <div class="dash-card-link">View Details</div>
+                                </div>
+                                <div class="dash-card-value">3</div>
+                            </div>
+                        </div>
+                        <div class="dash-card" style="background-color: #f95697;">
+                            <div class="dash-card-content">
+                                <div class="dash-card-info">
+                                    <div class="dash-card-title">Rejected TRF</div>
+                                    <div class="dash-card-link">View Details</div>
+                                </div>
+                                <div class="dash-card-value">1</div>
+                            </div>
+                        </div>
+                        <div class="dash-card" style="background-color: #8a929f;">
+                            <div class="dash-card-content">
+                                <div class="dash-card-info">
+                                    <div class="dash-card-title">Released TRF</div>
+                                    <div class="dash-card-link">View Details</div>
+                                </div>
+                                <div class="dash-card-value">6</div>
+                            </div>
+                        </div>
+                        <div class="dash-card" style="background-color: #9b7bc2;">
+                            <div class="dash-card-content">
+                                <div class="dash-card-info">
+                                    <div class="dash-card-title">Partially Released TRF</div>
+                                    <div class="dash-card-link">View Details</div>
+                                </div>
+                                <div class="dash-card-value">53</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="table-view">
                     <div class="search-section">
                         <div class="search-header">
@@ -88,7 +173,7 @@
 
                     <div class="table-section">
                         <div class="table-header">
-                            <h3 id="table-title">Accepted TRF</h3>
+                            <h3 id="table-title">Manager Submitted TRF</h3>
                             <div class="table-actions">
                                 <input type="text" placeholder="🔍 Search" class="global-search">
                                 <button class="btn-outline">PDF</button>
@@ -101,67 +186,62 @@
                                 <thead>
                                     <tr>
                                         <th>TRF Number <span>↓↑</span></th>
-                                        <th>F&D Approver Name <span>↓↑</span></th>
+                                        <th>AR Number <span>↓↑</span></th>
+                                        <th>FND Approver Name <span>↓↑</span></th>
                                         <th>Project Code/ Name <span>↓↑</span></th>
                                         <th>Batch Number <span>↓↑</span></th>
                                         <th>Status <span>↓↑</span></th>
+                                        <th>Storage Condition <span>↓↑</span></th>
                                         <th>Request Date <span>↓↑</span></th>
-                                        <th>Test Assigned/Total Test <span>↓↑</span></th>
+                                        <th>Approved by <span>↓↑</span></th>
+                                        <th>Approved on <span>↓↑</span></th>
+                                        <th>Action <span>↓↑</span></th>
+                                    </tr>
+                                    <tr class="filter-row">
+                                        <th><input type="text" class="col-filter" data-col="0" placeholder="Search TRF Numbe"></th>
+                                        <th><input type="text" class="col-filter" data-col="1" placeholder="Search AR Numbe"></th>
+                                        <th><input type="text" class="col-filter" data-col="2" placeholder="Search FND Approver N"></th>
+                                        <th><input type="text" class="col-filter" data-col="3" placeholder="Search Project Code/ N"></th>
+                                        <th><input type="text" class="col-filter" data-col="4" placeholder="Search Batch Nur"></th>
+                                        <th><input type="text" class="col-filter" data-col="5" placeholder="Search"></th>
+                                        <th><input type="text" class="col-filter" data-col="6" placeholder="Search Storage Cond"></th>
+                                        <th><input type="text" class="col-filter" data-col="7" placeholder="Search Reques"></th>
+                                        <th><input type="text" class="col-filter" data-col="8" placeholder="Search Approv"></th>
+                                        <th><input type="text" class="col-filter" data-col="9" placeholder="Search Approv"></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody id="table-body">
                                     <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000149')">TRF000149</a></td>
+                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000117')">TRF000117</a></td>
+                                        <td>AR000080</td>
                                         <td>NEHA MANAGER</td>
-                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
-                                        <td>Abc</td>
+                                        <td>GLY / Glycopyrronium bromine 1mg Tablets</td>
+                                        <td>TEST/PRE/TAB/75-DT/001</td>
                                         <td>Initial</td>
-                                        <td>08-06-2026</td>
-                                        <td>3/3</td>
-                                    </tr>
-                                    <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000138')">TRF000138</a></td>
-                                        <td>NEHA MANAGER</td>
-                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
-                                        <td>Abc</td>
-                                        <td>Stability</td>
-                                        <td>08-06-2026</td>
-                                        <td>3/3</td>
-                                    </tr>
-                                    <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000136')">TRF000136</a></td>
-                                        <td>NEHA MANAGER</td>
-                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
-                                        <td>Abc</td>
-                                        <td>Initial</td>
-                                        <td>08-06-2026</td>
-                                        <td>3/3</td>
-                                    </tr>
-                                    <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000135')">TRF000135</a></td>
-                                        <td>NEHA MANAGER</td>
-                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
-                                        <td>Abc</td>
-                                        <td>Stability</td>
-                                        <td>08-06-2026</td>
-                                        <td>3/3</td>
-                                    </tr>
-                                    <tr class="data-row">
-                                        <td><a href="#" class="trf-link" onclick="showFormView('TRF000132')">TRF000132</a></td>
-                                        <td>Gaurav Mistry</td>
-                                        <td>NTR / Nitrofurantoin 100mg Prolonged Release Cap</td>
-                                        <td>Abc</td>
-                                        <td>Initial</td>
+                                        <td>40°C/75% RH</td>
                                         <td>05-06-2026</td>
-                                        <td>3/3</td>
+                                        <td>Santosh Khairnar</td>
+                                        <td>06-06-2026</td>
+                                        <td class="action-cell">
+                                            <button class="action-btn accept-btn" title="Accept" onclick="handleAction('TRF000117', 'Accepted')">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </button>
+                                            <button class="action-btn reject-btn" title="Reject" onclick="handleAction('TRF000117', 'Rejected')">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <div class="pagination-footer">
                             <div class="entries-select">
-                                Show <select id="entries-per-page"><option>10</option><option>25</option></select> entries
+                                Show <select id="entries-per-page">
+                                    <option>10</option>
+                                    <option>25</option>
+                                </select> entries
                             </div>
                             <div class="pagination-controls">
                                 <button class="page-btn">‹</button>
@@ -177,195 +257,298 @@
                         <h3 style="margin-top: 15px;" id="form-title">Allocated View TRF</h3>
                     </div>
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>TRF No.</label>
-                        <input type="text" value="TRF000149" readonly class="read-only-input">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>TRF No.</label>
+                            <input type="text" value="TRF000149" readonly class="read-only-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Project Code / Name*</label>
+                            <input type="text" value="NTR | Nitrofurantoin 100mg Prolonged Release Cap" readonly
+                                class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Sample Quantity</label>
+                            <input type="text" value="25" readonly class="read-only-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" value="25-09-2026" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="status-select" onchange="toggleStabilitySection()"
+                                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
+                                <option value="Initial">Initial</option>
+                                <option value="Stability" selected>Stability</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Pack</label>
+                            <input type="text" value="10" readonly class="read-only-input">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Batch/Lot No</label>
+                            <input type="text" value="Abc" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Label Claim</label>
+                            <input type="text" value="Abc" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Info</label>
+                            <input type="text" value="Abc" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Mfg By.</label>
+                            <input type="text" value="Robin" readonly class="read-only-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mfg Date</label>
+                            <input type="text" value="05-06-2026" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Sample Stage</label>
+                            <input type="text" value="Finished Product" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>F&D Approved By</label>
+                            <input type="text" value="NEHA MANAGER" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>F&D Team Leader</label>
+                            <input type="text" value="Rahul TL" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>F&D Scientist</label>
+                            <input type="text" value="Hardik Patel" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Accepted By ADL</label>
+                            <input type="text" value="Santosh Khairnar" readonly class="read-only-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Batch Size</label>
+                            <input type="text" value="10" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>TRF Status</label>
+                            <input type="text" value="Allocated" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Create Date</label>
+                            <input type="text" value="05-06-2026" readonly class="read-only-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Approved Date</label>
+                            <input type="text" value="06-06-2026" readonly class="read-only-input">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Project Code / Name*</label>
-                        <input type="text" value="NTR | Nitrofurantoin 100mg Prolonged Release Cap" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Sample Quantity</label>
-                        <input type="text" value="25" readonly class="read-only-input">
+                    <div class="stability-section" id="stability-section"
+                        style="margin-top: 20px; margin-bottom: 20px;">
+                        <h4>B. Stability condition: (Put on √ mark)</h4>
+                        <div class="table-responsive">
+                            <table class="stability-table data-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Stability (Storage) Conditions</th>
+                                        <th colspan="10" style="text-align: center;">Stability Stations</th>
+                                    </tr>
+                                    <tr>
+                                        <th>1M</th>
+                                        <th>2M</th>
+                                        <th>3M</th>
+                                        <th>6M</th>
+                                        <th>9M</th>
+                                        <th>12M</th>
+                                        <th>15M</th>
+                                        <th>18M</th>
+                                        <th>24M</th>
+                                        <th>36M</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Accelerated<br>(40°C ± 2°C / 75% ± 5% RH)</td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Long term (25°C ± 2°C/60% ± 5% RH) (zone I & II)</td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Intermediate (30 °C ± 2 °C/ 65% ± 5% RH) (zone I & II)</td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox" checked></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Refrigeration (5 °C ± 3 °C)</td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Freezing (- 20°C ± 5°C)</td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                        <td><input type="checkbox"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Expiry Date</label>
-                        <input type="text" value="25-09-2026" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select id="status-select" onchange="toggleStabilitySection()" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
-                            <option value="Initial">Initial</option>
-                            <option value="Stability" selected>Stability</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Pack</label>
-                        <input type="text" value="10" readonly class="read-only-input">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>Batch/Lot No</label>
-                        <input type="text" value="Abc" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Label Claim</label>
-                        <input type="text" value="Abc" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Additional Info</label>
-                        <input type="text" value="Abc" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Mfg By.</label>
-                        <input type="text" value="Robin" readonly class="read-only-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Mfg Date</label>
-                        <input type="text" value="05-06-2026" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Sample Stage</label>
-                        <input type="text" value="Finished Product" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>F&D Approved By</label>
-                        <input type="text" value="NEHA MANAGER" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>F&D Team Leader</label>
-                        <input type="text" value="Rahul TL" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>F&D Scientist</label>
-                        <input type="text" value="Hardik Patel" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Accepted By ADL</label>
-                        <input type="text" value="Santosh Khairnar" readonly class="read-only-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Batch Size</label>
-                        <input type="text" value="10" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>TRF Status</label>
-                        <input type="text" value="Allocated" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Create Date</label>
-                        <input type="text" value="05-06-2026" readonly class="read-only-input">
-                    </div>
-                    <div class="form-group">
-                        <label>Approved Date</label>
-                        <input type="text" value="06-06-2026" readonly class="read-only-input">
-                    </div>
-                </div>
-
-                <div class="stability-section" id="stability-section" style="margin-top: 20px; margin-bottom: 20px;">
-                    <h4>B. Stability condition: (Put on √ mark)</h4>
-                    <div class="table-responsive">
-                        <table class="stability-table data-table">
+                    <!-- Results Section (Visibility Controlled by Role) -->
+                    <div class="results-section" id="results-section">
+                        <table class="results-table">
                             <thead>
                                 <tr>
-                                    <th rowspan="2">Stability (Storage) Conditions</th>
-                                    <th colspan="10" style="text-align: center;">Stability Stations</th>
-                                </tr>
-                                <tr>
-                                    <th>1M</th><th>2M</th><th>3M</th><th>6M</th><th>9M</th><th>12M</th><th>15M</th><th>18M</th><th>24M</th><th>36M</th>
+                                    <th>Test Name</th>
+                                    <th>Remark</th>
+                                    <th>Assigned To</th>
+                                    <th>Test Result</th>
+                                    <th>Submitted By</th>
+                                    <th>Submitted On</th>
+                                    <th>Test Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Accelerated<br>(40°C ± 2°C / 75% ± 5% RH)</td>
-                                    <td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                    <td><input type="text" value="Dissolution-1" class="read-only-input" readonly></td>
+                                    <td><input type="text" id="remark-1" value="qq" class="read-only-input" readonly>
+                                    </td>
+                                    <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
+                                    <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;"
+                                            onclick="openUploadModal('Dissolution-1', this)">Upload</button></td>
+                                    <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
+                                    <td style="text-align: center;"><button
+                                            style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;"
+                                            onclick="toggleEditRemark(this, 'remark-1')" title="Edit Remark"><svg
+                                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 20h9"></path>
+                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
+                                                </path>
+                                            </svg></button></td>
                                 </tr>
                                 <tr>
-                                    <td>Long term (25°C ± 2°C/60% ± 5% RH) (zone I & II)</td>
-                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                    <td><input type="text" value="Assay-3" class="read-only-input" readonly></td>
+                                    <td><input type="text" id="remark-2" value="aa" class="read-only-input" readonly>
+                                    </td>
+                                    <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
+                                    <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;"
+                                            onclick="openUploadModal('Assay-3', this)">Upload</button></td>
+                                    <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
+                                    <td style="text-align: center;"><button
+                                            style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;"
+                                            onclick="toggleEditRemark(this, 'remark-2')" title="Edit Remark"><svg
+                                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 20h9"></path>
+                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
+                                                </path>
+                                            </svg></button></td>
                                 </tr>
                                 <tr>
-                                    <td>Intermediate (30 °C ± 2 °C/ 65% ± 5% RH) (zone I & II)</td>
-                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox" checked></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
-                                </tr>
-                                <tr>
-                                    <td>Refrigeration (5 °C ± 3 °C)</td>
-                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
-                                </tr>
-                                <tr>
-                                    <td>Freezing (- 20°C ± 5°C)</td>
-                                    <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+                                    <td><input type="text" value="Related Substance" class="read-only-input" readonly>
+                                    </td>
+                                    <td><input type="text" id="remark-3" value="23" class="read-only-input" readonly>
+                                    </td>
+                                    <td><input type="text" value="Mangesh Lohate" class="read-only-input" readonly></td>
+                                    <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;"
+                                            onclick="openUploadModal('Related Substance', this)">Upload</button></td>
+                                    <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
+                                    <td style="text-align: center;"><button
+                                            style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;"
+                                            onclick="toggleEditRemark(this, 'remark-3')" title="Edit Remark"><svg
+                                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 20h9"></path>
+                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
+                                                </path>
+                                            </svg></button></td>
                                 </tr>
                             </tbody>
                         </table>
+                        <div class="table-footer">
+                            Showing 1 to 3 of 3 entries
+                        </div>
                     </div>
-                </div>
 
-                <!-- Results Section (Visibility Controlled by Role) -->
-                <div class="results-section" id="results-section">
-                    <table class="results-table">
-                        <thead>
-                            <tr>
-                                <th>Test Name</th>
-                                <th>Remark</th>
-                                <th>Assigned To</th>
-                                <th>Test Result</th>
-                                <th>Submitted By</th>
-                                <th>Submitted On</th>
-                                <th>Test Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" value="Dissolution-1" class="read-only-input" readonly></td>
-                                <td><input type="text" id="remark-1" value="qq" class="read-only-input" readonly></td>
-                                <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
-                                <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;" onclick="openUploadModal('Dissolution-1', this)">Upload</button></td>
-                                <td><input type="text" value="" class="read-only-input" readonly></td>
-                                <td><input type="text" value="" class="read-only-input" readonly></td>
-                                <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
-                                <td style="text-align: center;"><button style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;" onclick="toggleEditRemark(this, 'remark-1')" title="Edit Remark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" value="Assay-3" class="read-only-input" readonly></td>
-                                <td><input type="text" id="remark-2" value="aa" class="read-only-input" readonly></td>
-                                <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
-                                <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;" onclick="openUploadModal('Assay-3', this)">Upload</button></td>
-                                <td><input type="text" value="" class="read-only-input" readonly></td>
-                                <td><input type="text" value="" class="read-only-input" readonly></td>
-                                <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
-                                <td style="text-align: center;"><button style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;" onclick="toggleEditRemark(this, 'remark-2')" title="Edit Remark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" value="Related Substance" class="read-only-input" readonly></td>
-                                <td><input type="text" id="remark-3" value="23" class="read-only-input" readonly></td>
-                                <td><input type="text" value="Mangesh Lohate" class="read-only-input" readonly></td>
-                                <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;" onclick="openUploadModal('Related Substance', this)">Upload</button></td>
-                                <td><input type="text" value="" class="read-only-input" readonly></td>
-                                <td><input type="text" value="" class="read-only-input" readonly></td>
-                                <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
-                                <td style="text-align: center;"><button style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;" onclick="toggleEditRemark(this, 'remark-3')" title="Edit Remark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="table-footer">
-                        Showing 1 to 3 of 3 entries
+                    <div id="team-leader-message" class="hidden-message" style="display:none;">
+                        Results are hidden. Only Creator and Managers can view released results.
                     </div>
-                </div>
-                
-                <div id="team-leader-message" class="hidden-message" style="display:none;">
-                    Results are hidden. Only Creator and Managers can view released results.
-                </div>
                 </div> <!-- End form-view -->
             </div>
+
+            <div class="main-footer"
+                style="padding: 20px; font-size: 0.75rem; color: #888; position: absolute; bottom: 0; left: 0;">
+                Powered by Luxsh Technologies © 2023
+            </div>
+
+            <button class="fab-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+            </button>
         </main>
     </div>
 
@@ -380,11 +563,21 @@
                 <div class="modal-field-row">
                     <label class="modal-label">Upload File</label>
                     <div class="modal-file-actions">
-                        <input type="file" id="modal-file-input" style="display: none;" onchange="handleFileSelected(event)">
-                        <span id="modal-file-name" class="modal-file-name" onclick="triggerFileInput()" style="cursor: pointer;">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7b61ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                        <input type="file" id="modal-file-input" style="display: none;"
+                            onchange="handleFileSelected(event)">
+                        <span id="modal-file-name" class="modal-file-name" onclick="triggerFileInput()"
+                            style="cursor: pointer;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7b61ff"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="vertical-align: middle; margin-right: 4px;">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
                             <span id="modal-file-text">Dissolution-1_Result.pdf</span>
-                            <button type="button" id="modal-file-cross" class="btn-file-cross" onclick="removeSelectedFile(event)" title="Remove file">&times;</button>
+                            <button type="button" id="modal-file-cross" class="btn-file-cross"
+                                onclick="removeSelectedFile(event)" title="Remove file">&times;</button>
                         </span>
                     </div>
                 </div>
@@ -405,4 +598,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

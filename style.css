@@ -1,8 +1,8 @@
 :root {
     --primary-bg: #f8f9fa;
-    --sidebar-bg: #4c4177;
-    --sidebar-bg-gradient: linear-gradient(135deg, #4c4177 0%, #2a224a 100%);
-    --sidebar-hover: rgba(255, 255, 255, 0.1);
+    --sidebar-bg: #4d4873;
+    --sidebar-bg-gradient: linear-gradient(135deg, #4d4873 0%, #534e7d 100%);
+    --sidebar-hover: rgba(255, 255, 255, 0.05);
     --sidebar-active: rgba(255, 255, 255, 0.2);
     --text-primary: #333;
     --text-secondary: #666;
@@ -77,12 +77,12 @@ body {
 
 .logo-container {
     padding: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo-container h2 {
     font-weight: 600;
     letter-spacing: 1px;
+    margin: 0;
 }
 .text-small {
     font-size: 0.5em;
@@ -92,10 +92,10 @@ body {
 
 .user-profile {
     padding: 20px;
+    padding-top: 0;
     display: flex;
     align-items: center;
     gap: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .avatar {
@@ -147,6 +147,107 @@ body {
 .sidebar-nav li.active {
     background: var(--sidebar-active);
     border-left: 4px solid #fff;
+}
+
+.dot-indicator {
+    width: 6px;
+    height: 6px;
+    background-color: #1cc2b2;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.dashboard-header h3 {
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 600;
+}
+
+.dashboard-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dashboard-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dashboard-dots .cyan { background: #1cc2b2; }
+.dashboard-dots .yellow { background: #ffc107; }
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.dash-card {
+    border-radius: 4px;
+    color: #fff;
+    padding: 15px 20px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dash-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dash-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dash-card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.dash-card-link {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+}
+
+.dash-card-value {
+    font-size: 2.2rem;
+    font-weight: 300;
+    opacity: 0.6;
+    line-height: 1;
+}
+
+.fab-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #8a73b5;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
 }
 
 .badge {

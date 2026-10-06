@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
             
+            // Switch back to table view when navigating tabs
             // Extract tab name to update the table title
             let tabName = "";
             tab.childNodes.forEach(node => {
@@ -14,12 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             const titleEl = document.getElementById('table-title');
-            if (titleEl) {
+            if (titleEl && tabName !== 'Dashboard') {
                 titleEl.textContent = tabName + ' TRF';
             }
-            
-            // Switch back to table view when navigating tabs
-            showTableView();
 
             // If they click on a tab with an unread badge, we can simulate reading it
             const badge = tab.querySelector('.badge');
@@ -39,7 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // View Routing Functions
+function showDashboardView() {
+    document.getElementById('table-view').style.display = 'none';
+    document.getElementById('form-view').style.display = 'none';
+    const dv = document.getElementById('dashboard-view');
+    if(dv) dv.style.display = 'block';
+}
+
 function showFormView(trfNumber) {
+    const dv = document.getElementById('dashboard-view');
+    if(dv) dv.style.display = 'none';
     document.getElementById('table-view').style.display = 'none';
     document.getElementById('form-view').style.display = 'block';
     
@@ -55,6 +62,8 @@ function showFormView(trfNumber) {
 }
 
 function showTableView() {
+    const dv = document.getElementById('dashboard-view');
+    if(dv) dv.style.display = 'none';
     document.getElementById('form-view').style.display = 'none';
     document.getElementById('table-view').style.display = 'block';
 }
