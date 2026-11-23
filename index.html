@@ -279,7 +279,7 @@
                         </div>
                         <div class="form-group">
                             <label>Status</label>
-                            <select id="status-select" onchange="toggleStabilitySection()"
+                            <select id="status-select"
                                 style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
                                 <option value="Initial">Initial</option>
                                 <option value="Stability" selected>Stability</option>
@@ -351,99 +351,7 @@
                         </div>
                     </div>
 
-                    <div class="stability-section" id="stability-section"
-                        style="margin-top: 20px; margin-bottom: 20px;">
-                        <h4>B. Stability condition: (Put on √ mark)</h4>
-                        <div class="table-responsive">
-                            <table class="stability-table data-table">
-                                <thead>
-                                    <tr>
-                                        <th rowspan="2">Stability (Storage) Conditions</th>
-                                        <th colspan="10" style="text-align: center;">Stability Stations</th>
-                                    </tr>
-                                    <tr>
-                                        <th>1M</th>
-                                        <th>2M</th>
-                                        <th>3M</th>
-                                        <th>6M</th>
-                                        <th>9M</th>
-                                        <th>12M</th>
-                                        <th>15M</th>
-                                        <th>18M</th>
-                                        <th>24M</th>
-                                        <th>36M</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Accelerated<br>(40°C ± 2°C / 75% ± 5% RH)</td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Long term (25°C ± 2°C/60% ± 5% RH) (zone I & II)</td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Intermediate (30 °C ± 2 °C/ 65% ± 5% RH) (zone I & II)</td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox" checked></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Refrigeration (5 °C ± 3 °C)</td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Freezing (- 20°C ± 5°C)</td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                        <td><input type="checkbox"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+
 
                     <!-- Results Section (Visibility Controlled by Role) -->
                     <div class="results-section" id="results-section">
@@ -451,76 +359,45 @@
                             <thead>
                                 <tr>
                                     <th>Test Name</th>
-                                    <th>Remark</th>
                                     <th>Assigned To</th>
                                     <th>Test Result</th>
                                     <th>Submitted By</th>
                                     <th>Submitted On</th>
+                                    <th>Remark</th>
                                     <th>Test Status</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><input type="text" value="Dissolution-1" class="read-only-input" readonly></td>
-                                    <td><input type="text" id="remark-1" value="qq" class="read-only-input" readonly>
-                                    </td>
                                     <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
                                     <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;"
                                             onclick="openUploadModal('Dissolution-1', this)">Upload</button></td>
                                     <td><input type="text" value="" class="read-only-input" readonly></td>
                                     <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" id="remark-1" value="qq" class="read-only-input"></td>
                                     <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
-                                    <td style="text-align: center;"><button
-                                            style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;"
-                                            onclick="toggleEditRemark(this, 'remark-1')" title="Edit Remark"><svg
-                                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M12 20h9"></path>
-                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
-                                                </path>
-                                            </svg></button></td>
                                 </tr>
                                 <tr>
                                     <td><input type="text" value="Assay-3" class="read-only-input" readonly></td>
-                                    <td><input type="text" id="remark-2" value="aa" class="read-only-input" readonly>
-                                    </td>
                                     <td><input type="text" value="Hardik Patel" class="read-only-input" readonly></td>
                                     <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;"
                                             onclick="openUploadModal('Assay-3', this)">Upload</button></td>
                                     <td><input type="text" value="" class="read-only-input" readonly></td>
                                     <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" id="remark-2" value="aa" class="read-only-input"></td>
                                     <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
-                                    <td style="text-align: center;"><button
-                                            style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;"
-                                            onclick="toggleEditRemark(this, 'remark-2')" title="Edit Remark"><svg
-                                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M12 20h9"></path>
-                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
-                                                </path>
-                                            </svg></button></td>
                                 </tr>
                                 <tr>
                                     <td><input type="text" value="Related Substance" class="read-only-input" readonly>
-                                    </td>
-                                    <td><input type="text" id="remark-3" value="23" class="read-only-input" readonly>
                                     </td>
                                     <td><input type="text" value="Mangesh Lohate" class="read-only-input" readonly></td>
                                     <td><button class="btn-primary" style="padding: 5px 15px; border-radius: 4px;"
                                             onclick="openUploadModal('Related Substance', this)">Upload</button></td>
                                     <td><input type="text" value="" class="read-only-input" readonly></td>
                                     <td><input type="text" value="" class="read-only-input" readonly></td>
+                                    <td><input type="text" id="remark-3" value="23" class="read-only-input"></td>
                                     <td><input type="text" value="Assigned" class="read-only-input" readonly></td>
-                                    <td style="text-align: center;"><button
-                                            style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 4px;"
-                                            onclick="toggleEditRemark(this, 'remark-3')" title="Edit Remark"><svg
-                                                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M12 20h9"></path>
-                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
-                                                </path>
-                                            </svg></button></td>
                                 </tr>
                             </tbody>
                         </table>

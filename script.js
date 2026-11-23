@@ -152,58 +152,6 @@ function handleAction(trfNumber, action) {
     }, 3000);
 }
 
-function toggleStabilitySection() {
-    const statusSelect = document.getElementById('status-select');
-    const stabilitySection = document.getElementById('stability-section');
-    if (statusSelect && stabilitySection) {
-        if (statusSelect.value === 'Stability') {
-            stabilitySection.style.display = 'block';
-        } else {
-            stabilitySection.style.display = 'none';
-        }
-    }
-}
-
-function toggleEditRemark(button, inputId) {
-    const input = document.getElementById(inputId);
-    if (!input) return;
-
-    const editIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f39c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>`;
-    const saveIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>`;
-
-    if (input.hasAttribute('readonly')) {
-        // Switch to edit mode
-        input.removeAttribute('readonly');
-        input.classList.remove('read-only-input');
-        input.style.backgroundColor = '#fff';
-        input.style.border = '1px solid #007bff';
-        input.style.boxShadow = '0 0 0 2px rgba(0,123,255,.25)';
-        input.focus();
-        
-        button.innerHTML = saveIcon;
-        button.title = 'Save Remark';
-    } else {
-        // Switch to save mode
-        input.setAttribute('readonly', 'true');
-        input.classList.add('read-only-input');
-        input.style.backgroundColor = '';
-        input.style.border = '';
-        input.style.boxShadow = '';
-        
-        button.innerHTML = editIcon;
-        button.title = 'Edit Remark';
-        
-        // Optional: show a small toast notification that it saved
-        const toast = document.getElementById('toast');
-        if (toast) {
-            toast.textContent = 'Remark updated successfully.';
-            toast.style.backgroundColor = '#00b09b';
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-    }
-}
-
 // Upload Test Result Modal Logic
 let currentUploadRow = null;
 let currentUploadTestName = '';
@@ -318,20 +266,23 @@ function submitUploadResult() {
 
         const inputs = currentUploadRow.querySelectorAll('input');
         // inputs[0]: Test Name
-        // inputs[1]: Remark
-        // inputs[2]: Assigned To
-        // inputs[3]: Submitted By (column: Submitted By)
-        // inputs[4]: Submitted On (column: Submitted On)
+        // inputs[1]: Assigned To
+        // inputs[2]: Submitted By (column: Submitted By)
+        // inputs[3]: Submitted On (column: Submitted On)
+        // inputs[4]: Remark (column: Remark)
         // inputs[5]: Test Status (column: Test Status)
-        if (inputs[3] && !inputs[3].value) {
-            inputs[3].value = inputs[2] ? inputs[2].value : 'Hardik Patel';
+        if (inputs[2] && !inputs[2].value) {
+            inputs[2].value = inputs[1] ? inputs[1].value : 'Hardik Patel';
         }
-        if (inputs[4] && !inputs[4].value) {
+        if (inputs[3] && !inputs[3].value) {
             const today = new Date();
             const dd = String(today.getDate()).padStart(2, '0');
             const mm = String(today.getMonth() + 1).padStart(2, '0');
             const yyyy = today.getFullYear();
-            inputs[4].value = `${dd}-${mm}-${yyyy}`;
+            inputs[3].value = `${dd}-${mm}-${yyyy}`;
+        }
+        if (inputs[4]) {
+            inputs[4].value = comment;
         }
         if (inputs[5]) {
             inputs[5].value = 'Submitted';
