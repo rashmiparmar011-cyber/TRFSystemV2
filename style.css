@@ -252,14 +252,19 @@ body {
 
 .badge {
     margin-left: auto;
-    background: rgba(255,255,255,0.2);
+    background: #28a745;
+    color: #ffffff;
     padding: 2px 8px;
     border-radius: 12px;
     font-size: 0.75rem;
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1.2;
 }
 
 .badge.unread {
-    background: var(--danger-color);
+    background: #28a745;
     font-weight: bold;
 }
 

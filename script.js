@@ -19,19 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 titleEl.textContent = tabName + ' TRF';
             }
 
-            // If they click on a tab with an unread badge, we can simulate reading it
-            const badge = tab.querySelector('.badge');
-            if (badge && badge.classList.contains('unread')) {
-                badge.classList.remove('unread');
-                // Simulate decreasing count
-                let count = parseInt(badge.textContent);
-                if (count > 0) {
-                    badge.textContent = count - 1;
-                    if (count - 1 === 0) {
-                        badge.style.display = 'none'; // hide if 0
-                    }
-                }
-            }
+            // Tab click keeps badge display persistent
         });
     });
 });
